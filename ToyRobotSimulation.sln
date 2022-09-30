@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToyRobotSimulation", "ToyRobotSimulation\ToyRobotSimulation.csproj", "{2E9B64EC-C1AB-4685-8D69-CE67420F07A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToyRobotSimulation.Test", "ToyRobotSimulation.Test\ToyRobotSimulation.Test.csproj", "{A7BBD34F-2348-4EE6-A4E5-09FFDA81D6BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2E9B64EC-C1AB-4685-8D69-CE67420F07A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E9B64EC-C1AB-4685-8D69-CE67420F07A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E9B64EC-C1AB-4685-8D69-CE67420F07A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E9B64EC-C1AB-4685-8D69-CE67420F07A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A7BBD34F-2348-4EE6-A4E5-09FFDA81D6BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7BBD34F-2348-4EE6-A4E5-09FFDA81D6BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7BBD34F-2348-4EE6-A4E5-09FFDA81D6BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7BBD34F-2348-4EE6-A4E5-09FFDA81D6BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DC175D34-7DCC-486C-9817-7B915912F8C7}
+	EndGlobalSection
+EndGlobal
