@@ -3,7 +3,7 @@ using ToyRobotSimulation.Strategy;
 
 class RobotSimulation
 {
-    static public void Main()
+    static public void Main(string[] args)
     {
         IPlacement placement = null;
         RuleEngine ruleEngine = new RuleEngine();
@@ -16,26 +16,49 @@ class RobotSimulation
             new ExitRule()
         };
 
-        Console.WriteLine("Welcome to Toy Robot Game");
-        Console.WriteLine("Choose one of the following Commands...");
-        Console.WriteLine("- PLACE X,Y,F (F=>NORTH,SOUTH,EAST,WEST)");
-        Console.WriteLine("- MOVE");
-        Console.WriteLine("- LEFT");
-        Console.WriteLine("- RIGHT");
-        Console.WriteLine("- REPORT");
-        Console.WriteLine("- EXIT");
-
-        while (true)
+        // assuming the filename argument exist
+        if (args.Length > 0 && File.Exists(args[0]))
         {
-            Console.Write("");
-            var userInput = Console.ReadLine();
-            try
+            Console.WriteLine($"Running file mode with filename={args[0]}");
+
+            IEnumerable<string> commandLines = File.ReadLines(args[0]);
+
+            foreach (var command in commandLines)
             {
-                ruleEngine.Execute(userInput, ref placement);
+                try
+                {
+                    Console.WriteLine(command);
+                    ruleEngine.Execute(command, ref placement);
+                }
+                catch (Exception ex)
+                {
+                    Console.Write($"Error: {ex.Message}");
+                }
             }
-            catch(Exception ex)
+        }
+        else
+        {
+            Console.WriteLine("Welcome to Toy Robot Game");
+            Console.WriteLine("Choose one of the following Commands...");
+            Console.WriteLine("- PLACE X,Y,F (F=>NORTH,SOUTH,EAST,WEST)");
+            Console.WriteLine("- MOVE");
+            Console.WriteLine("- LEFT");
+            Console.WriteLine("- RIGHT");
+            Console.WriteLine("- REPORT");
+            Console.WriteLine("- EXIT");
+
+            while (true)
             {
-                Console.Write($"Error: {ex.Message}");
+                Console.Write("");
+                var userInput = Console.ReadLine();
+                try
+                {
+                    ruleEngine.Execute(userInput, ref placement);
+                }
+                catch (Exception ex)
+                {
+                    Console.Write($"Error: {ex.Message}");
+                }
             }
         }
     }
